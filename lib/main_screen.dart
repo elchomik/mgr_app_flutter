@@ -102,6 +102,9 @@ class _MainScreenState extends State<MainScreen> {
                     height: 40,
                     width: rowWidth,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[850],
+                      ),
                         onPressed: () => _editingController.clear(),
                         child: const Text('Clear')),
                   ),
@@ -115,6 +118,9 @@ class _MainScreenState extends State<MainScreen> {
                     width: rowWidth,
                     height: 40,
                     child: ElevatedButton(
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Colors.blue[850],
+                      ),
                       onPressed: () =>
                           Navigator.pushNamed(context, '/secondPage'),
                       child: const SingleChildScrollView(
@@ -148,12 +154,14 @@ class _MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 FloatingActionButton(
+                  backgroundColor: Colors.blue[850],
                   heroTag: 'Decrement',
                   onPressed: decrementCounter,
                   tooltip: 'Decrement',
                   child: const Icon(Icons.remove),
                 ),
                 FloatingActionButton(
+                  backgroundColor: Colors.blue[850],
                   heroTag: 'Increment',
                   onPressed: incrementCounter,
                   tooltip: 'Increment',
@@ -164,7 +172,7 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-      backgroundColor: Colors.teal,
+      backgroundColor: Colors.teal[800],
     );
   }
 
