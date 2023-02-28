@@ -34,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
     double rowHeight = MediaQuery.of(this.context).size.height / 6;
 
     return Scaffold(
-      appBar: const AppTitle(
+      appBar: AppTitle(
         title: 'First Screen',
         size: 100,
       ),
@@ -148,11 +148,13 @@ class _MainScreenState extends State<MainScreen> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 FloatingActionButton(
+                  heroTag: 'Decrement',
                   onPressed: decrementCounter,
                   tooltip: 'Decrement',
                   child: const Icon(Icons.remove),
                 ),
                 FloatingActionButton(
+                  heroTag: 'Increment',
                   onPressed: incrementCounter,
                   tooltip: 'Increment',
                   child: const Icon(Icons.add),
