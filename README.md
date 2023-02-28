@@ -1,6 +1,6 @@
 # mgr_app_flutter
 
-Master degrre app in Flutter
+Master degree app in Flutter
 
 ## Getting Started
 
