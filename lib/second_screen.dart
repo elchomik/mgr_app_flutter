@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mgr_app_flutter/domain/quick_sort.dart';
 import 'package:mgr_app_flutter/widgets/title_widget.dart';
 
 class SecondScreen extends StatefulWidget {
@@ -24,35 +25,6 @@ class _SecondScreenState extends State<SecondScreen> {
     });
   }
 
-  void quickSort(List<String> list, int leftIndex, int rightIndex) {
-    if(leftIndex < rightIndex) {
-      int partitionIndex = partition(list, leftIndex, rightIndex);
-      quickSort(list, leftIndex, partitionIndex-1);
-      quickSort(list, partitionIndex+1, rightIndex);
-    }
-  }
-
-  int partition(List<String> list, int leftIndex, int rightIndex) {
-    String pivot = list[rightIndex];
-    int i = leftIndex -1;
-    for(int j=leftIndex; j<rightIndex; j++){
-      if(list[j].compareTo(pivot) < 0){
-        i++;
-        swap(list,i,j);
-      }
-    }
-
-    swap(list, i+1, rightIndex);
-
-    return i+1;
-  }
-
-  void swap(List<String> list, int i, int j) {
-    String temp = list[i];
-    list[i] = list[j];
-    list[j] = temp;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -69,7 +41,7 @@ class _SecondScreenState extends State<SecondScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 40),
                 child: ElevatedButton(
-                  onPressed: () => defaultSort(),
+                  onPressed: () => reversedSort(),
                   child: const Text(
                     'Sortuj',
                     style: TextStyle(fontSize: 22, fontFamily: 'Roboto'),
@@ -79,7 +51,7 @@ class _SecondScreenState extends State<SecondScreen> {
               Padding(
                 padding: const EdgeInsets.only(top: 10, left: 40),
                 child: ElevatedButton(
-                  onPressed: () => reversedSort(),
+                  onPressed: () => defaultSort(),
                   child: const Text(
                     'Przywróć',
                     style: TextStyle(fontSize: 22, fontFamily: 'Roboto'),
