@@ -36,6 +36,7 @@ class AppTitle extends StatelessWidget with PreferredSizeWidget {
             ),
           )
         : AppBar(
+          backgroundColor: Colors.blue[850],
             title: Padding(
               padding: const EdgeInsets.all(10.0),
               child: SingleChildScrollView(
