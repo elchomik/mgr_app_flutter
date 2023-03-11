@@ -14,9 +14,6 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Master Degree App in Flutter',
-      theme: ThemeData(
-        primarySwatch: Colors.lightBlue,
-      ),
       initialRoute: '/mainPage',
       routes: {
         '/mainPage': (contex) => const MainScreen(),
