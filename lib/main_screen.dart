@@ -65,16 +65,7 @@ class _MainScreenState extends State<MainScreen> {
                     SizedBox(
                       height: rowHeight,
                       width: rowWidth,
-                      child: GestureDetector(
-                          behavior: HitTestBehavior.opaque,
-                          onTap: () => showDialog(
-                                context: context,
-                                builder: (BuildContext context) =>
-                                    showDialogBox(context,
-                                        title: _fluttery,
-                                        content: getFlutteryContent()),
-                              ),
-                          child: Image.asset('assets/images/bird.png')),
+                      child: Image.asset('assets/images/bird.png'),
                     ),
                     const SizedBox(
                       width: 70,
@@ -82,17 +73,7 @@ class _MainScreenState extends State<MainScreen> {
                     SizedBox(
                       height: rowHeight,
                       width: rowWidth,
-                      child: GestureDetector(
-                        behavior: HitTestBehavior.opaque,
-                        onTap: () => showDialog(
-                          context: context,
-                          builder: (BuildContext context) => showDialogBox(
-                              context,
-                              title: _rocket,
-                              content: getRocketContent()),
-                        ),
-                        child: Image.asset('assets/images/bird.png'),
-                      ),
+                      child: Image.asset('assets/images/bird.png'),
                     ),
                   ],
                 ),
@@ -193,7 +174,8 @@ class _MainScreenState extends State<MainScreen> {
                     Padding(
                       padding: const EdgeInsets.only(left: 30),
                       child: FloatingActionButton(
-                        backgroundColor: const Color.fromARGB(255, 149, 177, 176),
+                        backgroundColor:
+                            const Color.fromARGB(255, 149, 177, 176),
                         heroTag: 'Decrement',
                         onPressed: decrementCounter,
                         tooltip: 'Decrement',
@@ -213,7 +195,8 @@ class _MainScreenState extends State<MainScreen> {
                     Padding(
                       padding: const EdgeInsets.only(right: 30),
                       child: FloatingActionButton(
-                        backgroundColor: const Color.fromARGB(255, 149, 177, 176),
+                        backgroundColor:
+                            const Color.fromARGB(255, 149, 177, 176),
                         heroTag: 'Increment',
                         onPressed: incrementCounter,
                         tooltip: 'Increment',
@@ -228,48 +211,17 @@ class _MainScreenState extends State<MainScreen> {
                 child: Text(
                   'You have pushed the button this many times: ',
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, fontFamily: 'Roboto',
-                  color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      fontFamily: 'Roboto',
+                      color: Colors.white),
                 ),
               )
             ],
           ),
         ),
         backgroundColor: const Color.fromARGB(255, 0, 128, 128));
-  }
-
-  Widget showDialogBox(BuildContext context,
-      {required String title, required String content}) {
-    return Theme(
-      data: Theme.of(context).copyWith(
-          dialogTheme: const DialogTheme(backgroundColor: Colors.blue)),
-      child: AlertDialog(
-        title: Text(
-          title,
-          style: const TextStyle(
-            fontSize: 16,
-            fontStyle: FontStyle.italic,
-          ),
-        ),
-        content: Text(content),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.of(this.context).pop(),
-            child: const Text(
-              'Cancel',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-          TextButton(
-            onPressed: () => Navigator.pushNamed(this.context, '/secondPage'),
-            child: const Text(
-              'Go to the second page',
-              style: TextStyle(color: Colors.black),
-            ),
-          ),
-        ],
-      ),
-    );
   }
 
   String getFlutteryContent() =>
